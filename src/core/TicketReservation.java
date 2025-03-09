@@ -259,8 +259,8 @@ public class TicketReservation {
     }
 
     public static void tampilkanKursi(char[][] seats) {
-        System.out.println("\nLAYAR BIOSKOP");
-        System.out.println("=========================");
+        System.out.println("\n          LAYAR BIOSKOP");
+        System.out.println("==================================");
         for (int i = ROWS - 1; i >= 0; i--) {
             System.out.print(ROW_LABELS[i] + "  ");
             for (int j = 0; j < COLS; j++) {
