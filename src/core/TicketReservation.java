@@ -1,8 +1,10 @@
 package core;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -18,6 +20,9 @@ public class TicketReservation {
 
     private static final ArrayList<SeatStatus> seatList = new ArrayList<>();
     private static final ArrayList<MovieList> myTickets = new ArrayList<>();
+
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private static final String CURRENT_DATE = dateFormat.format(new Date());
 
     static {
         initializeMovieList();
@@ -242,16 +247,35 @@ public class TicketReservation {
 
         // Simpan nomor kursi ke dalam MovieList
         filmYangDipilih.setNoSeat(kursiTerpilih.toString());
+        filmYangDipilih.setJumlahTiket(jumlahTiket);
 
         double totalHarga = filmYangDipilih.hitungHargaTotal();
 
-        System.out.println("\nPemesanan Tiket");
-        System.out.println("Film       : " + filmYangDipilih.getJudulFilm());
+        System.out.println("\nRincian Pembelian Tiket:");
+        /* System.out.println("Film       : " + filmYangDipilih.getJudulFilm());
         System.out.println("Studio      : " + filmYangDipilih.getAuditorium());
         System.out.println("Waktu      : " + filmYangDipilih.getShowTime());
         System.out.println("Jumlah Tiket: " + jumlahTiket);
         System.out.println("Nomor Kursi : " + kursiTerpilih);
-        System.out.println("Total Harga: Rp" + String.format("%,.0f", totalHarga).replace(",", "."));
+        System.out.println("Total Harga: Rp" + String.format("%,.0f", totalHarga).replace(",", ".")); */
+
+        System.out.println("╔═════════════════════════════════════╗");
+        System.out.println("║            MOVIE TICKET             ║");
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Movie      : %-22s ║\n", filmYangDipilih.getJudulFilm());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Show Time  : %-22s ║\n", filmYangDipilih.getShowTime());
+        System.out.printf("║ Auditorium : %-22s ║\n", filmYangDipilih.getAuditorium());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Seat(s)    : %-22s ║\n", kursiTerpilih);
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Total Price: Rp%,15.0f      ║\n", totalHarga);
+        System.out.printf("║ Ticket(s)  : %-22d ║\n", jumlahTiket);
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.println("║ ░█░█ █░█ ░█░░ ░█░ █░█░ █░░█         ║");
+        System.out.printf("║ %-35s ║\n", CURRENT_DATE);
+        System.out.println("╚═════════════════════════════════════╝");
+        System.out.println();
         System.out.println("\nTerima kasih telah memesan tiket!!");
 
         myTickets.add(new MovieList(filmYangDipilih.getJudulFilm(), filmYangDipilih.getHarga(), 
@@ -285,13 +309,31 @@ public class TicketReservation {
         System.out.println("========================================");
         for (int i = 0; i < myTickets.size(); i++) {
             MovieList tiket = myTickets.get(i);
-            System.out.println((i + 1) + ". Film: " + tiket.getJudulFilm());
+            /* System.out.println((i + 1) + ". Film: " + tiket.getJudulFilm());
             System.out.println("   Studio: " + tiket.getAuditorium());
             System.out.println("   Waktu : " + tiket.getShowTime());
             System.out.println("   Kursi : " + tiket.getNoSeat());
             System.out.println("   Jumlah Tiket: " + tiket.getJumlahTiket());
             System.out.println("   Total Harga : Rp" + String.format("%,.0f", tiket.hitungHargaTotal()).replace(",", "."));
-            System.out.println("========================================");
+            System.out.println("========================================"); */
+
+            System.out.println("╔═════════════════════════════════════╗");
+            System.out.println("║            MOVIE TICKET             ║");
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.printf("║ Movie      : %-22s ║\n", tiket.getJudulFilm());
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.printf("║ Show Time  : %-22s ║\n", tiket.getShowTime());
+            System.out.printf("║ Auditorium : %-22s ║\n", tiket.getAuditorium());
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.printf("║ Seat(s)    : %-22s ║\n", tiket.getNoSeat());
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.printf("║ Total Price: Rp%,15.0f      ║\n", tiket.hitungHargaTotal());
+            System.out.printf("║ Ticket(s)  : %-22d ║\n", tiket.getJumlahTiket());
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.println("║ ░█░█ █░█ ░█░░ ░█░ █░█░ █░░█         ║");
+            System.out.printf("║ %-35s ║\n", CURRENT_DATE);
+            System.out.println("╚═════════════════════════════════════╝");
+            System.out.println();
         }
     }
     
