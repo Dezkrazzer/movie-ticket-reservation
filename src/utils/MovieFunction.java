@@ -18,4 +18,13 @@ public class MovieFunction {
         System.out.println("|>>             Aplikasi Bioskop             <<|");
         System.out.println("╚==============================================╝");
     }
+
+    public static void keluarAplikasi() {
+        System.out.println("\nTerima kasih, keluar dari aplikasi...\n");
+
+        System.out.println("***********************************************");
+        System.out.println("**         Aplikasi ini dibuat oleh          **");
+        System.out.println("**         Lazuardi Akbar Imani              **");
+        System.out.println("***********************************************");
+    }
 }

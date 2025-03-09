@@ -20,7 +20,7 @@ public class Main {
                 case 2 -> TicketReservation.cariTiket(scanner, movieList);
                 case 3 -> TicketReservation.lihatTiketSaya();
                 case 4 -> {
-                    System.out.println("Terima kasih, keluar dari aplikasi.");
+                    MovieFunction.keluarAplikasi();
                     return;
                 }
                 default -> System.out.println("[ERROR] | Pilihan tidak valid.");
