@@ -55,10 +55,10 @@ public class Movie {
         this.auditorium = auditorium;
     }
 
-    public void tampilkanInformasi() {
-        System.out.println("Judul      : " + judulFilm);
-        System.out.println("Harga      : Rp " + harga);
-        System.out.println("Show Time  : " + showTime);
+    public void tampilkanTiket() {
+        System.out.println("Film       : " + judulFilm);
         System.out.println("Auditorium : " + auditorium);
+        System.out.println("Show Time  : " + showTime);
+        System.out.println("Harga      : Rp " + harga);
     }
 }

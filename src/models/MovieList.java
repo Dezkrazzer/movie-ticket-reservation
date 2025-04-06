@@ -1,5 +1,7 @@
 package models;
 
+import core.TicketReservation;
+
 public class MovieList extends Movie {
     private int jumlahTiket;
     protected String noSeat;
@@ -38,9 +40,23 @@ public class MovieList extends Movie {
     }
 
     @Override
-    public void tampilkanInformasi() {
-        super.tampilkanInformasi(); // Ambil dari Movie.java
-        System.out.println("Jumlah Tiket : " + jumlahTiket);
-        System.out.println("Nomor Kursi  : " + noSeat);
+    public void tampilkanTiket() {
+        System.out.println("╔═════════════════════════════════════╗");
+        System.out.println("║            MOVIE TICKET             ║");
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Movie      : %-22s ║\n", getJudulFilm());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Show Time  : %-22s ║\n", getShowTime());
+        System.out.printf("║ Auditorium : %-22s ║\n", getAuditorium());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Seat(s)    : %-22s ║\n", getNoSeat());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.printf("║ Total Price: Rp%,15.0f      ║\n", hitungHargaTotal());
+        System.out.printf("║ Ticket(s)  : %-22d ║\n", getJumlahTiket());
+        System.out.println("╠═════════════════════════════════════╣");
+        System.out.println("║ ░█░█ █░█ ░█░░ ░█░ █░█░ █░░█         ║");
+        System.out.printf("║ %-35s ║\n", TicketReservation.CURRENT_DATE);
+        System.out.println("╚═════════════════════════════════════╝");
+        System.out.println();
     }
 }

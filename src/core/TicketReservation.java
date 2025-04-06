@@ -22,7 +22,7 @@ public class TicketReservation {
     private static final ArrayList<MovieList> myTickets = new ArrayList<>();
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    private static final String CURRENT_DATE = dateFormat.format(new Date());
+    public static final String CURRENT_DATE = dateFormat.format(new Date());
 
     static {
         initializeMovieList();
@@ -307,15 +307,34 @@ public class TicketReservation {
     
         System.out.println("\n📌 Tiket yang telah Anda pesan:");
         System.out.println("========================================");
+        for (MovieList tiket : myTickets) {
+            tiket.tampilkanTiket(); // INI ADALAH POLYMORPHISM!
+        }
+    }
+}
+
+
+
+// ==[ BACKUP UNTUK KODE YANG TIDAK DIGUNAKAN ] ==
+
+/*
+ public static void lihatTiketSaya() {
+        if (myTickets.isEmpty()) {
+            System.out.println("\nAnda belum memiliki tiket.");
+            return;
+        }
+    
+        System.out.println("\n📌 Tiket yang telah Anda pesan:");
+        System.out.println("========================================");
         for (int i = 0; i < myTickets.size(); i++) {
             MovieList tiket = myTickets.get(i);
-            /* System.out.println((i + 1) + ". Film: " + tiket.getJudulFilm());
+            // System.out.println((i + 1) + ". Film: " + tiket.getJudulFilm());
             System.out.println("   Studio: " + tiket.getAuditorium());
             System.out.println("   Waktu : " + tiket.getShowTime());
             System.out.println("   Kursi : " + tiket.getNoSeat());
             System.out.println("   Jumlah Tiket: " + tiket.getJumlahTiket());
             System.out.println("   Total Harga : Rp" + String.format("%,.0f", tiket.hitungHargaTotal()).replace(",", "."));
-            System.out.println("========================================"); */
+            System.out.println("========================================"); //
 
             System.out.println("╔═════════════════════════════════════╗");
             System.out.println("║            MOVIE TICKET             ║");
@@ -335,27 +354,4 @@ public class TicketReservation {
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println();
         }
-    }
-
-    public static void infoFilm(Scanner scanner) {
-        System.out.println("\n========== Informasi Film ==========");
-        scanner.nextLine();
-        System.out.print("> Masukkan judul film: ");
-
-        String cariJudul = scanner.nextLine();
-        boolean ditemukan = false;
-
-        for (MovieList movie : TicketReservation.movieList) {
-            if (movie.getJudulFilm().equalsIgnoreCase(cariJudul)) {
-                // Polymorphism di sini:
-                movie.tampilkanInformasi(); 
-                ditemukan = true;
-                break;
-            }
-        }
-
-        if (!ditemukan) {
-            System.out.println("[ERROR] Film tidak ditemukan.");
-        }
-    }
-}
+    } */
