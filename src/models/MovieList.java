@@ -36,4 +36,11 @@ public class MovieList extends Movie {
     public double hitungHargaTotal() {
         return getHarga() * jumlahTiket;
     }
+
+    @Override
+    public void tampilkanInformasi() {
+        super.tampilkanInformasi(); // Ambil dari Movie.java
+        System.out.println("Jumlah Tiket : " + jumlahTiket);
+        System.out.println("Nomor Kursi  : " + noSeat);
+    }
 }

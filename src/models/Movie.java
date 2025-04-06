@@ -54,4 +54,11 @@ public class Movie {
     public void setAuditorium(int auditorium) {
         this.auditorium = auditorium;
     }
+
+    public void tampilkanInformasi() {
+        System.out.println("Judul      : " + judulFilm);
+        System.out.println("Harga      : Rp " + harga);
+        System.out.println("Show Time  : " + showTime);
+        System.out.println("Auditorium : " + auditorium);
+    }
 }

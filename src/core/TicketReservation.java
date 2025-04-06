@@ -336,5 +336,26 @@ public class TicketReservation {
             System.out.println();
         }
     }
-    
+
+    public static void infoFilm(Scanner scanner) {
+        System.out.println("\n========== Informasi Film ==========");
+        scanner.nextLine();
+        System.out.print("> Masukkan judul film: ");
+
+        String cariJudul = scanner.nextLine();
+        boolean ditemukan = false;
+
+        for (MovieList movie : TicketReservation.movieList) {
+            if (movie.getJudulFilm().equalsIgnoreCase(cariJudul)) {
+                // Polymorphism di sini:
+                movie.tampilkanInformasi(); 
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("[ERROR] Film tidak ditemukan.");
+        }
+    }
 }

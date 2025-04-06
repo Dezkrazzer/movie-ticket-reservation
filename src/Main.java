@@ -19,7 +19,8 @@ public class Main {
                 case 1 -> TicketReservation.tampilkanJadwal(movieList);
                 case 2 -> TicketReservation.cariTiket(scanner, movieList);
                 case 3 -> TicketReservation.lihatTiketSaya();
-                case 4 -> {
+                case 4 -> TicketReservation.infoFilm(scanner);
+                case 5 -> {
                     MovieFunction.keluarAplikasi();
                     return;
                 }
