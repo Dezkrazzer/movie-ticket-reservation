@@ -27,5 +27,5 @@ A simple Java program that functions to order cinema tickets.
 
 
 | --- | --- | --- |
-| **Lazuardi Akbar Imani** | **Febriana Nur Aini** | **Gembull** | **Qolbun Halim H** |
+| **Lazuardi Akbar Imani** | **Febriana Nur Aini** | **Muhamad Rifki Maulana** | **Qolbun Halim H** |
 
