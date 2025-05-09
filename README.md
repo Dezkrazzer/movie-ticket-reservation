@@ -29,7 +29,7 @@ A simple Java program that functions to order cinema tickets.
 | **Lazuardi Akbar Imani** | **Febriana Nur Aini** | **Muhamad Rifki Maulana** | **Qolbun Halim Hidayatullah** |
 
 
-|[<img src="https://avatars.githubusercontent.com/u/208145298?v=4" width="215"/>](https://github.com/Chokycakep) | [<img src="https://avatars.githubusercontent.com/u/208224463?v=4" width="215"/>](https://github.com/SUPERChild973) | [<img src="https://avatars.githubusercontent.com/u/208254287?v=4" width="215"/>](https://github.com/wafiqulil2603) | &nbsp; |
+|[<img src="https://avatars.githubusercontent.com/u/208145298?v=4" width="216"/>](https://github.com/Chokycakep) | [<img src="https://avatars.githubusercontent.com/u/208224463?v=4" width="216"/>](https://github.com/SUPERChild973) | [<img src="https://avatars.githubusercontent.com/u/208254287?v=4" width="216"/>](https://github.com/wafiqulil2603) | &nbsp; |
 | --- | --- | --- | --- |
 | **Putu Novita D** | **Muhammad Dava K.R.** | **Wafiq Ulil Absor A.** |
 
