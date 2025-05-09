@@ -1,5 +1,7 @@
-# movie-ticket-reservation
-A simple Java program that functions to order cinema tickets.
+<div align="center">
+  <h1>🎬 Movie Ticket Reservation</h1>
+  <p><em>A simple Java program that functions to order cinema tickets!</em></p>
+</div>
 
 ##  Contributor
 | NAMA | NIM |
@@ -15,11 +17,11 @@ A simple Java program that functions to order cinema tickets.
 ---
 
 ---
-### Features
-- Manajemen Data Film 
-- Pencarian Tiket & Film (Searching)   
-- Pembelian Tiket Film 
-- Display Tiket
+### Fitur
+- 🎞️ **Manajemen Data Film**  
+- 🔍 **Pencarian Tiket & Film (Searching)**  
+- 🎟️ **Pembelian Tiket Film**  
+- 🖨️ **Display Tiket**
 
 
 ## Thanks to
