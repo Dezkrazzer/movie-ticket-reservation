@@ -15,7 +15,7 @@ public class MovieFunction {
 
     public static void tampilkanJudul() {
         System.out.println("╔==============================================╗");
-        System.out.println("|>>             Aplikasi Bioskop             <<|");
+        System.out.println("|>>                 CinemaGO                 <<|");
         System.out.println("╚==============================================╝");
     }
 

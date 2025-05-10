@@ -5,6 +5,7 @@ import dezkrazzer.movie_ticket_reservation.core.TicketReservation;
 public class MovieList extends Movie {
     private int jumlahTiket;
     protected String noSeat;
+    private String tiketID;
 
     public MovieList(
         String judulFilm, 
@@ -39,6 +40,14 @@ public class MovieList extends Movie {
         return getHarga() * jumlahTiket;
     }
 
+    public String getTiketID() {
+        return tiketID;
+    }
+
+    public void setTiketID(String tiketID) {
+        this.tiketID = tiketID;
+    }
+
     @Override
     public void tampilkanTiket() {
         System.out.println("╔═════════════════════════════════════╗");
@@ -55,6 +64,7 @@ public class MovieList extends Movie {
         System.out.printf("║ Ticket(s)  : %-22d ║\n", getJumlahTiket());
         System.out.println("╠═════════════════════════════════════╣");
         System.out.println("║ ░█░█ █░█ ░█░░ ░█░ █░█░ █░░█         ║");
+        System.out.printf("║ %-35s ║\n", tiketID);
         System.out.printf("║ %-35s ║\n", TicketReservation.CURRENT_DATE);
         System.out.println("╚═════════════════════════════════════╝");
         System.out.println();

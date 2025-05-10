@@ -250,6 +250,8 @@ public class TicketReservation {
         filmYangDipilih.setNoSeat(kursiTerpilih.toString());
         filmYangDipilih.setJumlahTiket(jumlahTiket);
 
+        String tiketID = "CGO-" + System.currentTimeMillis();
+
         double totalHarga = filmYangDipilih.hitungHargaTotal();
 
         System.out.println("\nRincian Pembelian Tiket:");
@@ -274,13 +276,24 @@ public class TicketReservation {
         System.out.printf("║ Ticket(s)  : %-22d ║\n", jumlahTiket);
         System.out.println("╠═════════════════════════════════════╣");
         System.out.println("║ ░█░█ █░█ ░█░░ ░█░ █░█░ █░░█         ║");
+        System.out.printf("║ %-35s ║\n", tiketID);
         System.out.printf("║ %-35s ║\n", CURRENT_DATE);
         System.out.println("╚═════════════════════════════════════╝");
         System.out.println();
         System.out.println("\nTerima kasih telah memesan tiket!!");
 
-        myTickets.add(new MovieList(filmYangDipilih.getJudulFilm(), filmYangDipilih.getHarga(), 
-        filmYangDipilih.getShowTime(), filmYangDipilih.getAuditorium(), jumlahTiket, filmYangDipilih.getNoSeat()));
+        MovieList tiketBaru = new MovieList(
+            filmYangDipilih.getJudulFilm(),
+            filmYangDipilih.getHarga(),
+            filmYangDipilih.getShowTime(),
+            filmYangDipilih.getAuditorium(),
+            jumlahTiket,
+            filmYangDipilih.getNoSeat()
+        );
+        tiketBaru.setTiketID(tiketID);
+
+        myTickets.add(tiketBaru);
+
     }
 
     public static void tampilkanKursi(char[][] seats) {
