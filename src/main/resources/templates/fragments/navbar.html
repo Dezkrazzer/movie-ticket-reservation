@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="navbar" class="navbar">
+    <div class="nav-left">
+      <div class="nav-logo">
+        <img th:src="@{/assets/cgoLOGO.png}" alt="Logo" />
+        <span>CinemaGO</span>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <div class="nav-items" id="nav-items">
+      <div class="nav-item" onclick="alert('Home clicked!')"><i class="bi bi-house-door-fill"></i>&nbsp;&nbsp;Home</div>
+      <div class="nav-item" onclick="alert('Staff clicked!')"><i class="bi bi-alarm-fill"></i>&nbsp;&nbsp;Lihat Jadwal</div>
+      <div class="nav-item" onclick="alert('Store clicked!')"><i class="bi bi-people-fill"></i>&nbsp;&nbsp;Anggota Kelompok</div>
+      <div class="nav-item dropdown">
+        <div class="dropdown-toggle">
+          <i class="bi bi-box-arrow-up-right"></i>&nbsp;&nbsp;Others Link
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="dropdown-menu">
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://discord.com/" target="_blank">Discord</a>
+      <a href="https://stegripenetwork.my.id" target="_blank">Website</a>
+    </div>
+
+    <div class="nav-right" id="nav-right">
+      <div class="play-button" onclick="copyIP()"><i class="bi bi-cart-fill"></i>  Buy Ticket</div>
+      <div class="nav-item" onclick="alert('Profile clicked!')"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Login</div>
+    </div>
+</div>
+
+</body>
+</html>

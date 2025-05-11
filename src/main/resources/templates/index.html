@@ -1,75 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>CinemaGO</title>
+    <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+
+    
 </head>
 
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #424549;
         color: #333;
         margin: 0;
         padding: 20px;
     }
-
-    h1 {
-        text-align: center;
-        color: #2c3e50;
-    }
-
-    h2 {
-        text-align: center;
-        color: #2980b9;
-    }
-
-    p {
-        text-align: center;
-        font-size: 1.2em;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        margin: 10px 0;
-    }
-
-    a {
-        text-decoration: none;
-        color: #2980b9;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.8em;
-    }
 </style>
 
 <body>
-    <h1>CinemaGO</h1>
-    <h2>Welcome to CinemaGO!</h2>
-    <p>We are glad to have you here. Explore our collection of movies and enjoy your cinematic experience.</p>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+</body>
 
-    <h3>Available Movies</h3>
-    <ul>
-        <li><a href="/movies/1">Movie 1</a></li>
-        <li><a href="/movies/2">Movie 2</a></li>
-        <li><a href="/movies/3">Movie 3</a></li>
-    </ul>
-
-    <footer>
-        <p>&copy; 2023 CinemaGO. All rights reserved.</p>
-    </footer>
+<script th:src="@{/js/navbar.js}"></script>
 </html>

@@ -1,0 +1,179 @@
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(0, 0, 0, 0.4); /* transparan hitam */
+    backdrop-filter: blur(10px); /* efek blur modern */
+    -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sedikit bayangan */
+    padding: 12px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .nav-logo span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    color: #c1c0c0;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  
+  .nav-item:hover {
+    background: #333;
+  }
+  
+  .play-button {
+    background: #c2a900;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .play-button:hover {
+    background: #b89f00;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* ========== Mobile Responsive ========== */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-items,
+    .nav-right {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.4); /* transparan hitam */
+      backdrop-filter: blur(10px); /* efek blur modern */
+      -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sedikit bayangan */
+      z-index: 10;
+    }
+  
+    .nav-items.show,
+    .nav-right.show {
+      display: flex;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-left {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .nav-logo {
+      gap: 10px;
+    }
+  }
+  
+  
+  
+  .nav-item.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-toggle {
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .dropdown-toggle:hover {
+    background: #333;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 110%; /* sedikit turun dari button */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 10px 0;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    z-index: 10001;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu.show {
+    display: flex;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
