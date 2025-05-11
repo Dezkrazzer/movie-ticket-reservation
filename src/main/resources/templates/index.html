@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/container-welcome.css}" />
 
     
 </head>
@@ -28,6 +29,16 @@
 
 <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <section class="top-section">
+        <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
+        <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Cari judul film, genre, atau lokasi bioskop..." />
+        </div>
+    </section>
+
+
 </body>
 
 <script th:src="@{/js/navbar.js}"></script>
