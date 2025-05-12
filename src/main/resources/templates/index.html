@@ -21,6 +21,7 @@
     />
 
     <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
     <link rel="stylesheet" th:href="@{/css/index/top-section.css}" />
     <link rel="stylesheet" th:href="@{/css/index/now-playing-movie.css}" />
   </head>
@@ -52,6 +53,8 @@
     <div
       th:replace="~{fragments/index/now-playing-section :: now-playing-section}"
     ></div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </body>
 
   <script th:src="@{/js/index/now-playing-movie.js}"></script>
