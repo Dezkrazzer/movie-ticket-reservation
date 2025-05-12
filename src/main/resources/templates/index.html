@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
-
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>CinemaGO</title>
     <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" th:href="@{/css/navbar.css}" />
-    <link rel="stylesheet" th:href="@{/css/container-welcome.css}" />
+    <link rel="stylesheet" th:href="@{/css/index/top-section.css}" />
+    <link rel="stylesheet" th:href="@{/css/index/now-playing-movie.css}" />
+  </head>
 
-    
-</head>
-
-<style>
+  <style>
     body {
-        font-family: "Inter", sans-serif;
-        background-color: #424549;
-        color: #333;
-        margin: 0;
-        padding: 20px;
+      font-family: "Inter", sans-serif;
+      background-color: #424549;
+      color: #333;
+      margin: 0;
+      padding: 20px;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
     <section class="top-section">
-        <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
-        <div class="search-box">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" placeholder="Cari judul film, genre, atau lokasi bioskop..." />
-        </div>
+      <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input
+          type="text"
+          placeholder="Cari judul film, genre, atau lokasi bioskop..."
+        />
+      </div>
     </section>
 
+    <div
+      th:replace="~{fragments/index/now-playing-section :: now-playing-section}"
+    ></div>
+  </body>
 
-</body>
-
-<script th:src="@{/js/navbar.js}"></script>
+  <script th:src="@{/js/index/now-playing-movie.js}"></script>
+  <script th:src="@{/js/navbar.js}"></script>
 </html>

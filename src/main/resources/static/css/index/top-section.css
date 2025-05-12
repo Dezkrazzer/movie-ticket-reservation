@@ -10,28 +10,28 @@
 
 .top-title {
   font-weight: bold;
-    font-size: 2.8rem;
-    background: linear-gradient(
-        -45deg,
-        #fdd835,
-        #fffde7,
-        #fdd835,
-        #fffde7
-    );
-    background-size: 300% 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShine 5s ease infinite;
+  font-size: 2.8rem;
+  background: linear-gradient(-45deg,
+      #fdd835,
+      #fffde7,
+      #fdd835,
+      #fffde7);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShine 5s ease infinite;
 }
 
 @keyframes gradientShine {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -43,7 +43,7 @@
   background-color: #1c1c1c;
   border-radius: 40px;
   padding: 12px 20px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
   width: 100%;
   max-width: 480px;
 }
