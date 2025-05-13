@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <section th:fragment="category-movie-section" class="category-wrapper">
+      <div class="category-scroll">
+        <!-- Left Arrow -->
+        <button
+          class="arrow-category arrow-category-left"
+          onclick="scrollCategories(-200)"
+        >
+          &#9664;
+        </button>
 
-<body>
-  <section th:fragment="category-movie-section" class="category-wrapper">
-    <div class="category-scroll">
-      <!-- Left Arrow -->
-      <button class="arrow-category arrow-category-left" onclick="scrollCategories(-200)">&#9664;</button>
+        <!-- Scrollable Category List -->
+        <div class="category-container" id="categoryContainer">
+          <div class="category active">All</div>
+          <div class="category">Action</div>
+          <div class="category">Adventure</div>
+          <div class="category">Animation</div>
+          <div class="category">Comedy</div>
+          <div class="category">Crime</div>
+          <div class="category">Drama</div>
+          <div class="category">Fantasy</div>
+          <div class="category">History</div>
+          <div class="category">Horror</div>
+          <div class="category">Mystery</div>
+          <div class="category">Story</div>
+          <div class="category">Romance</div>
+          <div class="category">Sport</div>
+        </div>
 
-      <!-- Scrollable Category List -->
-      <div class="category-container" id="categoryContainer">
-        <div class="category active">All</div>
-        <div class="category">Action</div>
-        <div class="category">Adventure</div>
-        <div class="category">Animation</div>
-        <div class="category">Comedy</div>
-        <div class="category">Crime</div>
-        <div class="category">Drama</div>
-        <div class="category">Fantasy</div>
-        <div class="category">History</div>
-        <div class="category">Horror</div>
-        <div class="category">Mystery</div>
-        <div class="category">Story</div>
-        <div class="category">Romance</div>
-        <div class="category">Sport</div>
+        <!-- Right Arrow -->
+        <button
+          class="arrow-category arrow-category-right"
+          onclick="scrollCategories(200)"
+        >
+          &#9654;
+        </button>
       </div>
-
-      <!-- Right Arrow -->
-      <button class="arrow-category arrow-category-right" onclick="scrollCategories(200)">&#9654;</button>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>
