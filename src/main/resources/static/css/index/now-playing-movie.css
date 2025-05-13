@@ -11,7 +11,13 @@
     font-size: 30px;
     font-weight: bold;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.now-playing-subtitle {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
 .now-playing-container {
