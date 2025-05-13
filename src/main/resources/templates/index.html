@@ -27,8 +27,10 @@
     <link rel="stylesheet" th:href="@{/css/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/footer.css}" />
     <link rel="stylesheet" th:href="@{/css/index/top-section.css}" />
+    <link rel="stylesheet" th:href="@{/css/index/category-movie.css}" />
     <link rel="stylesheet" th:href="@{/css/index/now-playing-movie.css}" />
     <link rel="stylesheet" th:href="@{/css/index/coming-soon-movie.css}" />
+    
   </head>
 
   <style>
@@ -56,6 +58,10 @@
     </section>
 
     <div
+      th:replace="~{fragments/index/category-movie-section :: category-movie-section}"
+    ></div>
+
+    <div
       th:replace="~{fragments/index/now-playing-section :: now-playing-section}"
     ></div>
 
@@ -64,9 +70,11 @@
     ></div>
 
     <div th:replace="~{fragments/footer :: footer}"></div>
+
   </body>
 
   <script th:src="@{/js/index/now-playing-movie.js}"></script>
+  <script th:src="@{/js/index/category-movie.js}"></script>
   <script th:src="@{/js/index/coming-soon-movie.js}"></script>
   <script th:src="@{/js/navbar.js}"></script>
 </html>
