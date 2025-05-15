@@ -24,6 +24,8 @@
       rel="stylesheet"
     />
 
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" th:href="@{/css/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/footer.css}" />
     <link rel="stylesheet" th:href="@{/css/index/top-section.css}" />
@@ -41,12 +43,17 @@
       margin: 0;
       padding: 20px;
     }
+    .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    }
   </style>
 
   <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-    <section class="top-section">
+    <section class="top-section" data-aos="fade-up">
       <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
       <div class="search-box">
         <i class="fas fa-search search-icon"></i>
@@ -66,12 +73,21 @@
     ></div>
 
     <div
-      th:replace="~{fragments/index/coming-soon-section :: coming-soon-section}"
+      th:replace="~{fragments/index/coming-soon-section :: coming-soon-section}" 
     ></div>
 
-    <div th:replace="~{fragments/footer :: footer}"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div> 
 
   </body>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,  // durasi animasi
+      once: true      // hanya animasi 1x saat masuk viewport
+    });
+  </script>
 
   <script th:src="@{/js/index/now-playing-movie.js}"></script>
   <script th:src="@{/js/index/category-movie.js}"></script>
