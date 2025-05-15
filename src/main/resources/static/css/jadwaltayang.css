@@ -1,0 +1,186 @@
+body {
+      font-family: 'Inter', sans-serif;
+      background: #424549;
+      color: #fff;
+      padding: 16px;
+    }
+
+    .container-schedule {
+            max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 28px;
+      padding-top: 100px;
+    }
+
+    h2.studio-header {
+      font-size: 24px;
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 6px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .film {
+      display: flex;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 12px;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .film img {
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .film-info {
+      flex: 1;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+      margin: 4px 0;
+      padding-left: 20px;
+    }
+
+    .labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .label {
+      background-color: #dcdcdc;
+      color: #222;
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .studio {
+      display: none; 
+    }
+
+    .synopsis {
+      font-size: 16px;
+      margin: 8px 0;
+      color: #e0e0e0;
+      padding-left: 20px;
+    }
+
+    .showtimes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-left: 20px;
+    }
+
+    .showtime {
+      background-color: #ffd700;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      width: 60px;   
+      height: 30px;  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    
+  @media (max-width: 767px) {
+  h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  h2.studio-header {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .film {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .film img {
+    width: 80px;
+    height: 110px;
+    border-radius: 6px;
+  }
+
+  .film-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .labels {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: -1px;
+    margin-bottom: 1px;
+  }
+
+  .label {
+    font-size: 8px;
+    padding: 2px 5px;
+    background-color: #dcdcdc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .synopsis {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  .showtime {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  padding: 0 1px;
+  font-size: 10px;
+  background-color: #ffd500; 
+  color: #000;
+  border-radius: 12px;
+  min-width: 20px;  
+  }
+
+}
