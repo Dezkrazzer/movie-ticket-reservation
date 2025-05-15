@@ -10,8 +10,18 @@ public class WebApp {
         return "Welcome to Movie Ticket Reservation Web App!";
     }
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String showIndex() {
         return "index";
+    }*/
+
+    @GetMapping("/register")
+    public String showRegister() {
+        return "auth/register";
+    }
+
+    @GetMapping("/login")
+    public String showLogin() {
+        return "auth/login";
     }
 }

@@ -106,4 +106,17 @@ public class Movie {
         System.out.println("Show Time  : " + showTime);
         System.out.println("Harga      : Rp " + harga);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Movie)) return false;
+        Movie movie = (Movie) o;
+        return judulFilm.equals(movie.judulFilm);
+    }
+
+    @Override
+    public int hashCode() {
+        return judulFilm.hashCode();
+    }
 }

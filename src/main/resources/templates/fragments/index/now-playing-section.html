@@ -7,33 +7,9 @@
     <p class="now-playing-subtitle">Film yang lagi tayang sekarang nih!</p>
   <button class="arrow arrow-left" onclick="scrollNowPlaying(-1)">&#x276E;&#x276E;</button>
   <div class="now-playing-container" id="nowPlaying">
-    <div class="movie-card">
-      <img src="https://filmartgallery.com/cdn/shop/files/The-Lion-King-Vintage-Movie-Poster-Original_436dcbed.jpg?v=1741713241" alt="Now Playing 1" />
-      <div class="movie-title">The Lion King</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://m.media-amazon.com/images/M/MV5BNzVhNGY3NGMtODgzNS00ZjI4LWI1MDgtNjM0OTNjYmNiOTAyXkEyXkFqcGc@._V1_.jpg" alt="Now Playing 2" />
-      <div class="movie-title">Dilan 1990</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://images-cdn.ubuy.co.id/634ffe4b05d16a708944a5ec-avengers-endgame-movie-poster-2-sided.jpg" alt="Now Playing 3" />
-      <div class="movie-title">Avengers: Endgame</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmuukSMYDVhQAsfuXj0OEVRyeeEszX7ywFnA&s" alt="Now Playing 4" />
-      <div class="movie-title">Yowis Ben 3</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStL4ILno0Cf5XXC-EyfnHjjqsUZjAGkjGwBQ&s" alt="Now Playing 5" />
-      <div class="movie-title">Interstellar</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://m.media-amazon.com/images/I/91B64g3nQfL.jpg" alt="Now Playing 6" />
-      <div class="movie-title">Spiderman</div>
-    </div>
-    <div class="movie-card">
-      <img src="https://upload.wikimedia.org/wikipedia/id/thumb/e/ed/Despicable_Me_4_Theatrical_Release_Poster.jpeg/250px-Despicable_Me_4_Theatrical_Release_Poster.jpeg" alt="Now Playing 7" />
-      <div class="movie-title">Minions</div>
+    <div th:each="movie : ${movies}" class="movie-card">
+      <img th:src="${movie.posterFilm}" alt="Now Playing 1" />
+      <div class="movie-title" th:text="${movie.judulFilm}"></div>
     </div>
   </div>
   <button class="arrow arrow-right" onclick="scrollNowPlaying(1)">&#x276F;&#x276F;</button>
