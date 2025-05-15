@@ -19,11 +19,13 @@
         />
       </div>
       <h2>Halo, Selamat Datang Kembali!</h2>
-      <form action="#" method="post">
-        <input type="text" placeholder="Username" required />
+      <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+      <form th:action="@{/auth/login}" method="post">
+        <input type="text" name="username" placeholder="Username" required />
         <input
           type="password"
           id="password"
+          name="password"
           placeholder="Kata Sandi"
           required
         />
@@ -33,7 +35,7 @@
         <button class="btn" type="submit">Login</button>
       </form>
       <div class="link">
-        Belum punya akun? <a href="register">Daftar di sini</a>
+        Belum punya akun? <a th:href="@{/auth/register}">Daftar di sini</a>
       </div>
     </div>
   </body>

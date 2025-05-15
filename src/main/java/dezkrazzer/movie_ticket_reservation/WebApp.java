@@ -14,14 +14,4 @@ public class WebApp {
     public String showIndex() {
         return "index";
     }*/
-
-    @GetMapping("/register")
-    public String showRegister() {
-        return "auth/register";
-    }
-
-    @GetMapping("/login")
-    public String showLogin() {
-        return "auth/login";
-    }
 }

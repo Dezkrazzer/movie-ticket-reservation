@@ -22,17 +22,20 @@
         Setiap kisah dimulai dengan satu langkah<br />
         <span style="font-weight: 600; color: #ffd700">Daftar Sekarang!</span>
       </h2>
-      <form action="#" method="post">
-        <input type="text" placeholder="Username" required />
+      <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+      <form th:action="@{/auth/register}" method="post">
+        <input type="text" name="username" placeholder="Username" required />
         <input
           type="password"
           id="password"
+          name="password"
           placeholder="Kata Sandi"
           required
         />
         <input
           type="password"
           id="confirm-password"
+          name="confirmPassword"
           placeholder="Konfirmasi Kata Sandi"
           required
         />
@@ -42,7 +45,7 @@
         <button class="btn" type="submit">Daftar</button>
       </form>
       <div class="link">
-        Sudah punya akun? <a href="login">Login di sini</a>
+        Sudah punya akun? <a th:href="@{/auth/login}">Login di sini</a>
       </div>
     </div>
   </body>

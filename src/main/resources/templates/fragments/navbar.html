@@ -28,17 +28,36 @@
       </div>
 
       <div class="dropdown-menu">
-        <a href="https://github.com/" target="_blank">GitHub</a>
-        <a href="https://discord.com/" target="_blank">Discord</a>
-        <a href="https://stegripenetwork.my.id" target="_blank">Website</a>
+        <a onclick="alert('Github clicked!')" target="_blank">GitHub</a>
+        <a onclick="alert('Discord clicked!')" target="_blank">Discord</a>
+        <a onclick="alert('Web clicked!')" target="_blank">Website</a>
       </div>
 
       <div class="nav-right" id="nav-right">
         <div class="play-button" onclick="copyIP()">
           <i class="bi bi-cart-fill"></i> Buy Ticket
         </div>
-        <div class="nav-item" onclick="alert('Profile clicked!')">
-          <i class="bi bi-person-circle"></i>&nbsp;&nbsp;Login
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div th:if="${session.loggedInUser}" class="d-flex">
+            <div
+              class="nav-item"
+              style="cursor: pointer"
+              onclick="alert('Profile clicked!')"
+            >
+              <i class="bi bi-person-circle"></i>&nbsp;&nbsp;
+              <span th:text="${session.loggedInUser}">Username</span>
+            </div>
+          </div>
+
+          <div th:unless="${session.loggedInUser}" class="d-flex">
+            <div
+              class="nav-item"
+              style="cursor: pointer"
+              onclick="location.href='/auth/login'"
+            >
+              <i class="bi bi-person-circle"></i>&nbsp;&nbsp;Login
+            </div>
+          </div>
         </div>
       </div>
     </div>
