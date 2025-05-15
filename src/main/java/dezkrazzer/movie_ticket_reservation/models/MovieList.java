@@ -8,14 +8,18 @@ public class MovieList extends Movie {
     private String tiketID;
 
     public MovieList(
-        String judulFilm, 
+        String movieID,
+        String judulFilm,
+        String categoryFilm,
+        String sinopsisFilm,
+        String posterFilm,
         double harga, 
         String showTime,
         int auditorium,
         int jumlahTiket,
         String noSeat) {    
 
-            super(judulFilm, harga, showTime, auditorium);
+            super(movieID, judulFilm, categoryFilm, sinopsisFilm, posterFilm, harga, showTime, auditorium);
             this.jumlahTiket = jumlahTiket;
             this.noSeat = noSeat;
     }

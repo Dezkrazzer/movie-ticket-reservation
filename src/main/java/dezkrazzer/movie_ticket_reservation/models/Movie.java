@@ -1,18 +1,31 @@
 package dezkrazzer.movie_ticket_reservation.models;
 
 public class Movie {
+    private String movieID;
     private String judulFilm;
+    private String categoryFilm;
+    private String sinopsisFilm;
+    private String posterFilm;
     private double harga;
     private String showTime;
     protected int auditorium;
+    
 
     public Movie(
-        String judulFilm, 
+        String movieID,
+        String judulFilm,
+        String categoryFilm,
+        String sinopsisFilm,
+        String posterFilm,
         double harga, 
         String showTime,
         int auditorium) {
 
+            this.movieID = movieID;
             this.judulFilm = judulFilm;
+            this.categoryFilm = categoryFilm;
+            this.sinopsisFilm = sinopsisFilm;
+            this.posterFilm = posterFilm;
             this.harga = harga;
             this.showTime = showTime;
             this.auditorium = auditorium;
@@ -53,6 +66,38 @@ public class Movie {
     
     public void setAuditorium(int auditorium) {
         this.auditorium = auditorium;
+    }
+
+    public String getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(String movieID) {
+        this.movieID = movieID;
+    }
+
+    public String getCategoryFilm() {
+        return categoryFilm;
+    }
+
+    public void setCategoryFilm(String categoryFilm) {
+        this.categoryFilm = categoryFilm;
+    }
+
+    public String getSinopsisFilm() {
+        return sinopsisFilm;
+    }
+
+    public void setSinopsisFilm(String sinopsisFilm) {
+        this.sinopsisFilm = sinopsisFilm;
+    }
+
+    public String getPosterFilm() {
+        return posterFilm;
+    }
+
+    public void setPosterFilm(String posterFilm) {
+        this.posterFilm = posterFilm;
     }
 
     public void tampilkanTiket() {

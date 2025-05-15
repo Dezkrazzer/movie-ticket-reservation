@@ -9,11 +9,12 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import dezkrazzer.movie_ticket_reservation.models.MovieData;
 import dezkrazzer.movie_ticket_reservation.models.MovieList;
 import dezkrazzer.movie_ticket_reservation.models.SeatStatus;
 
 public class TicketReservation {
-    static ArrayList<MovieList> movieList = new ArrayList<>();
+    static ArrayList<MovieList> movieList = MovieData.getMovieList();
 
     private static final int ROWS = 6; // Jumlah baris kursi (A-F)
     private static final int COLS = 8; // Jumlah kolom kursi (1-8)
@@ -24,37 +25,6 @@ public class TicketReservation {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     public static final String CURRENT_DATE = dateFormat.format(new Date());
-
-    static {
-        initializeMovieList();
-    }
-
-    private static void initializeMovieList() {
-        // DATA FILM STUDIO 1
-        movieList.add(new MovieList("Minions", 40000, "10:00", 1, 0, ""));
-        movieList.add(new MovieList("Interstellar", 40000, "12:00", 1, 0, ""));
-        movieList.add(new MovieList("Avengers: Endgame", 40000, "14:00", 1, 0, ""));
-        movieList.add(new MovieList("Spiderman", 40000, "16:00", 1, 0, ""));
-        movieList.add(new MovieList("The Lion King", 40000, "18:00", 1, 0, ""));
-        movieList.add(new MovieList("Yowis Ben 3", 40000, "20:00", 1, 0, ""));
-        movieList.add(new MovieList("Dilan 1990", 40000, "22:00", 1, 0, ""));
-        // DATA FILM STUDIO 2
-        movieList.add(new MovieList("The Lion King", 40000, "10:00", 2, 0, ""));
-        movieList.add(new MovieList("Dilan 1990", 40000, "12:00", 2, 0, ""));
-        movieList.add(new MovieList("Yowis Ben 3", 40000, "14:00", 2, 0, ""));
-        movieList.add(new MovieList("Avengers: Endgame", 40000, "16:00", 2, 0, ""));
-        movieList.add(new MovieList("Minions", 40000, "18:00", 2, 0, ""));
-        movieList.add(new MovieList("Spiderman", 40000, "20:00", 2, 0, ""));
-        movieList.add(new MovieList("Interstellar", 40000, "22:00", 2,  0, ""));
-        // DATA FILM STUDIO 3
-        movieList.add(new MovieList("Yowis Ben 3", 40000, "10:00", 3, 0, ""));
-        movieList.add(new MovieList("The Lion King", 40000, "12:00", 3, 0, ""));
-        movieList.add(new MovieList("Minions", 40000, "14:00", 3, 0, ""));
-        movieList.add(new MovieList("Interstellar", 40000, "16:00", 3, 0, ""));
-        movieList.add(new MovieList("Avengers: Endgame", 40000, "18:00", 3, 0, ""));
-        movieList.add(new MovieList("Dilan 1990", 40000, "20:00", 3, 0, ""));
-        movieList.add(new MovieList("Spiderman", 40000, "22:00", 3, 0, ""));
-    }
 
     public static void tampilkanJadwal(ArrayList<MovieList> movieList1) {
         // Mengumpulkan daftar waktu tayang dan studio
@@ -283,7 +253,11 @@ public class TicketReservation {
         System.out.println("\nTerima kasih telah memesan tiket!!");
 
         MovieList tiketBaru = new MovieList(
+            filmYangDipilih.getMovieID(),
             filmYangDipilih.getJudulFilm(),
+            filmYangDipilih.getCategoryFilm(),
+            filmYangDipilih.getSinopsisFilm(),
+            filmYangDipilih.getPosterFilm(),
             filmYangDipilih.getHarga(),
             filmYangDipilih.getShowTime(),
             filmYangDipilih.getAuditorium(),
