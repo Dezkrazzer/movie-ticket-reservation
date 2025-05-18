@@ -31,10 +31,10 @@
   </head>
   <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
-    <h1>Nonton Apa Hari Ini? Yuk cek jadwalnya!</h1>
+    <h1 data-aos="fade-up">Nonton Apa Hari Ini? Yuk cek jadwalnya!</h1>
     <div class="container-schedule">
-      <h2 class="studio-header">Studio 1</h2>
-      <div th:each="movie : ${studio1Movies}" class="film">
+      <h2 class="studio-header" data-aos="fade-up">Studio 1</h2>
+      <div th:each="movie : ${studio1Movies}" class="film" data-aos="fade-up">
         <img
           th:src="${movie.posterFilm}"
           th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
@@ -56,8 +56,8 @@
         </div>
       </div>
 
-      <h2 class="studio-header">Studio 2</h2>
-      <div th:each="movie : ${studio2Movies}" class="film">
+      <h2 class="studio-header" data-aos="fade-up">Studio 2</h2>
+      <div th:each="movie : ${studio2Movies}" class="film" data-aos="fade-up">
         <img
           th:src="${movie.posterFilm}"
           th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
@@ -79,8 +79,8 @@
         </div>
       </div>
 
-      <h2 class="studio-header">Studio 3</h2>
-      <div th:each="movie : ${studio3Movies}" class="film">
+      <h2 class="studio-header" data-aos="fade-up">Studio 3</h2>
+      <div th:each="movie : ${studio3Movies}" class="film" data-aos="fade-up">
         <img
           th:src="${movie.posterFilm}"
           th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
@@ -103,8 +103,15 @@
       </div>
     </div>
 
-    <div th:replace="~{fragments/footer :: footer}"></div>
+    <div th:replace="~{fragments/footer :: footer}" data-aos="fade-up"></div>
   </body>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900, // durasi animasi
+      once: true, // hanya animasi 1x saat masuk viewport
+    });
+  </script>
   <script th:src="@{/js/navbar.js}"></script>
 </html>
