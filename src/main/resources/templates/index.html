@@ -54,14 +54,16 @@
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
     <section class="top-section" data-aos="fade-up">
-      <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
-      <div class="search-box">
+    <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
+    <form class="search-box" th:action="@{/search}" method="get">
         <i class="fas fa-search search-icon"></i>
         <input
-          type="text"
-          placeholder="Cari judul film, genre, atau lokasi bioskop..."
+            type="text"
+            name="query"
+            th:value="${query}"
+            placeholder="Cari nama film, genre, atau jam tayang..."
         />
-      </div>
+    </form>
     </section>
 
     <div
