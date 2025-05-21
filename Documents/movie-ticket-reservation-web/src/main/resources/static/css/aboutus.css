@@ -1,0 +1,127 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #424549;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-anggota-kelompok {
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding-top: 100px;
+    background: linear-gradient(-45deg,
+            #fdd835,
+            #fffde7,
+            #fdd835,
+            #fffde7);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShine 5s ease infinite;
+}
+
+@keyframes gradientShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container-aboutus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 50px;
+    max-width: 1000px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.badge-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: gold;
+  color: black;
+  padding: 5px;
+  border-radius: 10%;
+  font-size: 18px;
+  z-index: 3;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid gold;
+    margin-top: -60px;
+    background-color: red;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.nim {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buttons a {
+    background-color: gold;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.buttons a:hover {
+    background-color: #f2c400;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+}

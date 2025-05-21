@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/auth/login.css}" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logo-container">
+        <img
+          th:src="@{/assets/cgoLOGO.png}"
+          alt="Logo CinemaGo"
+          class="logo-image"
+        />
+      </div>
+      <h2>Halo, Selamat Datang Kembali!</h2>
+      <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+      <form th:action="@{/auth/login}" method="post">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Kata Sandi"
+          required
+        />
+        <span class="show-password" onclick="togglePassword()"
+          >Tampilkan Sandi</span
+        >
+        <button class="btn" type="submit">Login</button>
+      </form>
+      <div class="link">
+        Belum punya akun? <a th:href="@{/auth/register}">Daftar di sini</a>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function togglePassword() {
+      var passwordField = document.getElementById("password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    }
+  </script>
+</html>

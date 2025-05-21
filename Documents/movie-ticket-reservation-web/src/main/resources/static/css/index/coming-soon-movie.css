@@ -1,0 +1,109 @@
+.coming-soon-section {
+    position: relative;
+    padding: 16px;
+    max-width: 1000px;
+    /* batasi lebar maksimum */
+    margin: 0 auto;
+    /* pusatkan di tengah layar */
+}
+
+.coming-soon-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.coming-soon-subtitle {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.coming-soon-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: start;
+    background-color: #282b30;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 220px;
+    display: block;
+    border-radius: 10px;
+}
+
+.movie-title {
+    height: 40px;
+    /* sesuaikan dengan tinggi maksimal dua baris */
+    display: flex;
+    align-items: center;
+    /* vertikal center */
+    justify-content: center;
+    /* horizontal center, opsional */
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+
+.arrow {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .coming-soon-section {
+        padding: 16px 40px;
+    }
+
+    .coming-soon-container {
+        overflow-x: hidden;
+    }
+
+    .movie-card {
+        width: 160px;
+    }
+
+    .arrow {
+        display: block;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        z-index: 2;
+        transition: color 0.2s;
+    }
+
+    .arrow:hover {
+        color: #ffcc00;
+        /* warna saat hover */
+    }
+
+    .arrow-left {
+        left: -30px;
+    }
+
+    .arrow-right {
+        right: -30px;
+    }
+}

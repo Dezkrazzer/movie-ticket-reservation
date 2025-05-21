@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CinemaGO - Search</title>
+    <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+    <link rel="stylesheet" th:href="@{/css/search/search.css}" />
+  </head>
+
+  <body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <section class="top-section" data-aos="fade-up">
+      <h1 class="top-title">Temukan Film & Bioskop Favoritmu</h1>
+      <form class="search-box" th:action="@{/search}" method="get">
+        <i class="fas fa-search search-icon"></i>
+        <input
+          type="text"
+          name="query"
+          th:value="${query}"
+          placeholder="Cari nama film, genre, atau jam tayang..."
+        />
+      </form>
+    </section>
+
+    <div class="container-schedule">
+      <h2 class="studio-header" data-aos="fade-up">Studio 1</h2>
+      <div th:if="${studio1Movies.isEmpty()}" data-aos="fade-up">
+        <p>Tidak ada film ditemukan di Studio 1.</p>
+      </div>
+      <div th:each="movie : ${studio1Movies}" class="film" data-aos="fade-up">
+        <img
+          th:src="${movie.posterFilm}"
+          th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
+        />
+        <div class="film-info">
+          <div th:text="${movie.judulFilm}" class="title">judulFilm</div>
+          <div class="labels">
+            <div th:text="${movie.categoryFilm}" class="label">
+              categoryFilm
+            </div>
+            <div th:text="${movie.showTime}" class="label">showTime</div>
+          </div>
+          <div th:text="'Studio ' + ${movie.auditorium}" class="studio">
+            auditorium
+          </div>
+          <div th:text="${movie.sinopsisFilm}" class="synopsis">
+            sinopsisFilm
+          </div>
+          <div class="under-sinopsis">
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="studio-header" data-aos="fade-up">Studio 2</h2>
+      <div th:if="${studio2Movies.isEmpty()}" data-aos="fade-up">
+        <p>Tidak ada film ditemukan di Studio 2.</p>
+      </div>
+      <div th:each="movie : ${studio2Movies}" class="film" data-aos="fade-up">
+        <img
+          th:src="${movie.posterFilm}"
+          th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
+        />
+        <div class="film-info">
+          <div th:text="${movie.judulFilm}" class="title">judulFilm</div>
+          <div class="labels">
+            <div th:text="${movie.categoryFilm}" class="label">
+              categoryFilm
+            </div>
+            <div th:text="${movie.showTime}" class="label">showTime</div>
+          </div>
+          <div th:text="'Studio ' + ${movie.auditorium}" class="studio">
+            auditorium
+          </div>
+          <div th:text="${movie.sinopsisFilm}" class="synopsis">
+            sinopsisFilm
+          </div>
+          <div class="under-sinopsis">
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="studio-header" data-aos="fade-up">Studio 3</h2>
+      <div th:if="${studio3Movies.isEmpty()}" data-aos="fade-up">
+        <p>Tidak ada film ditemukan di Studio 3.</p>
+      </div>
+      <div th:each="movie : ${studio3Movies}" class="film" data-aos="fade-up">
+        <img
+          th:src="${movie.posterFilm}"
+          th:alt="'poster_' + ${movie.judulFilm.replace(' ', '_')}"
+        />
+        <div class="film-info">
+          <div th:text="${movie.judulFilm}" class="title">judulFilm</div>
+          <div class="labels">
+            <div th:text="${movie.categoryFilm}" class="label">
+              categoryFilm
+            </div>
+            <div th:text="${movie.showTime}" class="label">showTime</div>
+          </div>
+          <div th:text="'Studio ' + ${movie.auditorium}" class="studio">
+            auditorium
+          </div>
+          <div th:text="${movie.sinopsisFilm}" class="synopsis">
+            sinopsisFilm
+          </div>
+          <div class="under-sinopsis">
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900, // durasi animasi
+      once: true, // hanya animasi 1x saat masuk viewport
+    });
+  </script>
+
+  <script>
+    function buyTicket(button) {
+      const movieID = button.getAttribute("data-movieid");
+      window.location.href = "/buyticket?id=" + movieID;
+    }
+  </script>
+</html>
