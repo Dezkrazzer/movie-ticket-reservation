@@ -21,7 +21,7 @@ public class TicketReservation {
     private static final char[] ROW_LABELS = {'A', 'B', 'C', 'D', 'E', 'F'}; // Label baris
 
     private static final ArrayList<SeatStatus> seatList = new ArrayList<>();
-    private static final ArrayList<MovieList> myTickets = new ArrayList<>();
+    public static final ArrayList<MovieList> myTickets = new ArrayList<>();
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     public static final String CURRENT_DATE = dateFormat.format(new Date());

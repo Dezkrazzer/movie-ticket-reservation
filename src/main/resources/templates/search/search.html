@@ -62,7 +62,13 @@
             sinopsisFilm
           </div>
           <div class="under-sinopsis">
-            <button class="buy-button">Beli Tiket</button>
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
           </div>
         </div>
       </div>
@@ -91,7 +97,13 @@
             sinopsisFilm
           </div>
           <div class="under-sinopsis">
-            <button class="buy-button">Beli Tiket</button>
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
           </div>
         </div>
       </div>
@@ -120,7 +132,13 @@
             sinopsisFilm
           </div>
           <div class="under-sinopsis">
-            <button class="buy-button">Beli Tiket</button>
+            <button
+              class="buy-button"
+              th:attr="data-movieid=${movie.movieID}"
+              onclick="buyTicket(this)"
+            >
+              Beli Tiket
+            </button>
           </div>
         </div>
       </div>
@@ -135,5 +153,12 @@
       duration: 900, // durasi animasi
       once: true, // hanya animasi 1x saat masuk viewport
     });
+  </script>
+
+  <script>
+    function buyTicket(button) {
+      const movieID = button.getAttribute("data-movieid");
+      window.location.href = "/buyticket?id=" + movieID;
+    }
   </script>
 </html>

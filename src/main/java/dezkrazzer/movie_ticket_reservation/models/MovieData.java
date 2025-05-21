@@ -11,7 +11,7 @@ public class MovieData {
         
         // DATA FILM STUDIO 1
         movieList.add(new MovieList(
-            "001",
+            "001A",
             "Minions",
             "Animation",
             "Minions adalah film animasi yang mengisahkan petualangan para Minion.",
@@ -23,7 +23,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "002",
+            "002A",
             "Interstellar",
             "Story",
             "Interstellar adalah film fiksi ilmiah yang mengisahkan perjalanan luar angkasa.",
@@ -35,7 +35,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "003",
+            "003A",
             "Avengers: Endgame",
             "Action",
             "Avengers: Endgame adalah film superhero yang mengisahkan perjuangan Avengers.",
@@ -47,7 +47,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "004",
+            "004A",
             "Spiderman",
             "Action",
             "Spiderman adalah film superhero yang mengisahkan petualangan Spiderman.",
@@ -59,7 +59,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "005",
+            "005A",
             "The Lion King",
             "Animation",
             "The Lion King adalah film animasi yang mengisahkan petualangan Simba.",
@@ -71,7 +71,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "006",
+            "006A",
             "Yowis Ben 3",
             "Comedy",
             "Yowis Ben 3 adalah film komedi yang mengisahkan petualangan Yowis Ben.",
@@ -83,7 +83,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "007",
+            "007A",
             "Dilan 1990",
             "Romance",
             "Dilan 1990 adalah film romantis yang mengisahkan cinta remaja.",
@@ -96,7 +96,7 @@ public class MovieData {
         ));
         // DATA FILM STUDIO 2
         movieList.add(new MovieList(
-            "005",
+            "005B",
             "The Lion King",
             "Animation",
             "The Lion King adalah film animasi yang mengisahkan petualangan Simba.",
@@ -108,7 +108,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList(
-            "007",
+            "007B",
             "Dilan 1990",
             "Romance",
             "Dilan 1990 adalah film romantis yang mengisahkan cinta remaja.",
@@ -120,7 +120,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "006",
+            "006B",
             "Yowis Ben 3",
             "Comedy",
             "Yowis Ben 3 adalah film komedi yang mengisahkan petualangan Yowis Ben.",
@@ -132,7 +132,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "003",
+            "003B",
             "Avengers: Endgame",
             "Action",
             "Avengers: Endgame adalah film superhero yang mengisahkan perjuangan Avengers.",
@@ -144,7 +144,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "001",
+            "001B",
             "Minions",
             "Animation", 
             "Minions adalah film animasi yang mengisahkan petualangan para Minion.",
@@ -156,7 +156,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "004",
+            "004B",
             "Spiderman",
             "Action",
             "Spiderman adalah film superhero yang mengisahkan petualangan Spiderman.",
@@ -168,7 +168,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "002",
+            "002B",
             "Interstellar",
             "Story",
             "Interstellar adalah film fiksi ilmiah yang mengisahkan perjalanan luar angkasa.",
@@ -181,7 +181,7 @@ public class MovieData {
         ));
         // DATA FILM STUDIO 3
         movieList.add(new MovieList( 
-            "006",
+            "006C",
             "Yowis Ben 3",
             "Comedy",
             "Yowis Ben 3 adalah film komedi yang mengisahkan petualangan Yowis Ben",
@@ -193,7 +193,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "005",
+            "005C",
             "The Lion King",
             "Animation",
             "The Lion King adalah film animasi yang mengisahkan petualangan Simba.",
@@ -205,7 +205,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "001",
+            "001C",
             "Minions",
             "Animation",
             "Minions adalah film animasi yang mengisahkan petualangan para Minion.",
@@ -217,7 +217,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "002",
+            "002C",
             "Interstellar",
             "Story",
             "Interstellar adalah film fiksi ilmiah yang mengisahkan perjalanan luar angkasa.",
@@ -229,7 +229,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "003",
+            "003C",
             "Avengers: Endgame",
             "Action",
             "Avengers: Endgame adalah film superhero yang mengisahkan perjuangan Avengers.",
@@ -241,7 +241,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "007",
+            "007C",
             "Dilan 1990",
             "Romance",
             "Dilan 1990 adalah film romantis yang mengisahkan cinta remaja.",
@@ -253,7 +253,7 @@ public class MovieData {
             ""
         ));
         movieList.add(new MovieList( 
-            "004",
+            "004C",
             "Spiderman",
             "Action",
             "Spiderman adalah film superhero yang mengisahkan petualangan Spiderman.",
@@ -266,5 +266,14 @@ public class MovieData {
         ));
 
         return movieList;
+    }
+    
+    public static Movie getMovieById(String movieId) {
+        for (MovieList movie : getMovieList()) {
+            if (movie.getMovieID().equals(movieId)) {
+                return movie;
+            }
+        }
+        return null; // Jika tidak ditemukan
     }
 }
