@@ -14,4 +14,9 @@ public class WebApp {
     public String showIndex() {
         return "index";
     }*/
+
+    @GetMapping("/aboutus")
+    public String showAboutUs() {
+        return "aboutus";
+    }
 }

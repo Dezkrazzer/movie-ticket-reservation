@@ -164,6 +164,18 @@ h2 {
     z-index: 2;
 }
 
+.button-home {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #2c2c2c;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
 /* Responsif Mobile */
 @media (max-width: 480px) {
     .container {
