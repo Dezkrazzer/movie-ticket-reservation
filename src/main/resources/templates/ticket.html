@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <link rel="stylesheet" th:href="@{/css/ticketconfirmation.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>🎫 Berikut adalah detail tiketmu!</h2>
+      <div class="ticket-card">
+        <div class="header">
+          <img th:src="${movie.posterFilm}" alt="Poster Film" class="poster" />
+          <div class="movie-info">
+            <h3 th:text="${movie.judulFilm}">Judul Film</h3>
+            <p>CGO Cinema</p>
+            <p>
+              Studio <span th:text="${movie.auditorium}">1</span> |
+              <span th:text="${movie.showTime}">13:00</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="ticket-details">
+          <div class="detail-row">
+            <span class="label">Tempat Duduk</span>
+            <span class="value" th:text="${ticket.selectedSeats}"
+              >A12, A11</span
+            >
+          </div>
+          <div class="detail-row">
+            <span class="label">ID Tiket</span>
+            <span class="value" th:text="${ticket.tiketId}"
+              >CGO-174777777777</span
+            >
+          </div>
+        </div>
+
+        <div class="order-info">
+          <h4>Informasi Pembayaran</h4>
+          <div class="info-row">
+            <span>Harga Tiket</span>
+            <span
+              th:text="'Rp40.000 × ' + ${#strings.arraySplit(ticket.selectedSeats, ',').length}"
+            >
+              Rp40.000 × 2
+            </span>
+          </div>
+          <div class="info-row total-row">
+            <span>Total Pembayaran</span>
+            <span th:text="'Rp' + ${ticket.totalPrice}">Rp80.000</span>
+          </div>
+        </div>
+
+        <p class="note">*Termasuk Pajak</p>
+
+        <div class="footer">
+          <small>
+            CinemaGo<br />
+            Kelompok 2 | INFORMATIKA 2024A<br />
+            Kampus UNESA 5<br />
+            Jl. Raya Maospati-Barat No. 358-360, Kelurahan Maospati, Kecamatan
+            Maospati, Kabupaten Magetan, Jawa Timur
+          </small>
+          <p class="warning">
+            Tiket yang sudah dibeli tidak dapat dibatalkan / direfund.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px">
+        <a
+          href="/profile"
+          class="button-home"
+          onmouseover="this.style.backgroundColor='#e6c200'"
+          onmouseout="this.style.backgroundColor='#ffd700'"
+        >
+          <i class="bi bi-house-door-fill"></i> Back </a
+        >
+      </div>
+    </div>
+  </body>
+</html>
