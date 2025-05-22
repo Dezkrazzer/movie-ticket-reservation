@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WebApp {
+
     @GetMapping("/debugging")
     public String hello() {
         return "Welcome to Movie Ticket Reservation Web App!";
@@ -14,10 +15,13 @@ public class WebApp {
     public String showIndex() {
         return "index";
     }*/
-
     @GetMapping("/aboutus")
     public String showAboutUs() {
         return "aboutus";
     }
 
+    @GetMapping("/*")
+    public String handle() {
+        return "404";
+    }
 }
