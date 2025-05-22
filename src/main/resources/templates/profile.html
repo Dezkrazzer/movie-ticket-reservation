@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CinemaGO - Profile</title>
+    <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
+
+    <link rel="stylesheet" th:href="@{/css/profile.css}" />
+  </head>
+
+  <body>
+    <div class="container-film">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTJbeaVfLOE1u5qnkxptyLAT5uHOEpd8t0w&s"
+        alt="Foto Profil"
+        class="profile-picture"
+      />
+      <div class="username" th:text="${username}">Session Username</div>
+
+      <div class="tickets">
+        <h3>🎟 Riwayat Pesanan</h3>
+
+        <div th:if="${#lists.isEmpty(tickets)}">
+          <p>Belum ada tiket yang dibeli.</p>
+        </div>
+
+        <!-- Ticket 1 -->
+        <div th:each="ticket : ${tickets}" class="ticket-wrapper">
+          <img th:src="${ticket.posterFilm}" alt="Poster Film" class="poster" />
+          <div class="ticket-item">
+            <h4 th:text="${ticket.judulFilm}">Judul Film</h4>
+            <p>
+              Studio <span th:text="${ticket.studio}">1</span> -
+              <span th:text="${ticket.showTime}">10:00</span> WIB | Seats:
+              <span th:text="${ticket.selectedSeats}">A4,A5</span>
+            </p>
+            <div class="status" th:text="${ticket.tiketId}">TiketID</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="logout-btn" onclick="location.href='/auth/logout'">
+        Logout
+      </button>
+    </div>
+  </body>
+</html>
