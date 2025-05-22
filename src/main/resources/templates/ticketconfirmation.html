@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konfirmasi Tiket</title>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <link rel="stylesheet" th:href="@{/css/ticketconfirmation.css}" />
   </head>
   <body>
     <div class="container">
-      <h2>🎫 Tiketmu sudah jadi nih!</h2>
+      <h2>🎫 Yeayy! Tiketmu sudah jadi nih!</h2>
       <div class="ticket-card">
         <!-- Bagian atas: Gambar dan info film -->
         <div class="header">
@@ -82,7 +87,7 @@
           onmouseover="this.style.backgroundColor='#e6c200'"
           onmouseout="this.style.backgroundColor='#ffd700'"
         >
-          ⬅ Back to Home   </a
+          <i class="bi bi-house-door-fill"></i> Back to Home</a
         >
       </div>
     </div>
