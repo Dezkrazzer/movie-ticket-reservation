@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CinemaGO - Film Information</title>
+    <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
+
+    <meta property="og:title" content="CinemaGO" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cgo.lzuardiai.my.id" />
+    <meta
+      property="og:image"
+      content="https://cgo.lzuardiai.my.id/assets/cgoLOGO.png"
+    />
+    <meta
+      property="og:description"
+      content="CinemaGO is an application for ordering cinema tickets with various features. This application is made using the Java programming language. And the program has met Object Oriented Programming."
+    />
+    <meta name="theme-color" content="#c2a900" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/filminfo.css}" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="notch left"></div>
+      <div class="notch right"></div>
+
+      <div class="poster">
+        <img th:src="${movie.posterFilm}" alt="Poster Film" />
+      </div>
+
+      <div class="info">
+        <div>
+          <h2 th:text="${movie.judulFilm}">Judul Film</h2>
+
+          <div class="tags">
+            <span class="tag" th:text="${movie.categoryFilm}">Animation</span>
+            <span class="tag" th:text="${movie.showTime}">10.00</span>
+            <span class="tag">14.00</span>
+            <span class="tag">18.00</span>
+          </div>
+
+          <p th:text="${movie.sinopsisFilm}">
+            Minions adalah film animasi yang mengisahkan petualangan para
+            Minion..
+          </p>
+
+          <div class="rating">
+            <span>Rating :</span>
+            <span class="stars" th:text="${ratingStars}">★★★★☆</span>
+          </div>
+
+          <div class="reviews">
+            <h3>Ulasan Penonton</h3>
+            <div th:each="review : ${reviews}" class="review">
+              <p>
+                <strong th:text="${review.nama}">Ani</strong> :
+                <span th:text="${review.komentar}">Komentar</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-filminfo">
+      <a href="/" class="back-button">
+        <i class="bi bi-arrow-left"></i> Back
+      </a>
+      <a th:href="@{/search(query=${movie.judulFilm})}" class="back-button">
+        <i class="bi bi-search"></i> Search Ticket
+      </a>
+    </div>
+  </body>
+</html>

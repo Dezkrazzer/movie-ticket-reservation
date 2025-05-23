@@ -8,8 +8,10 @@
   <button class="arrow arrow-left" onclick="scrollNowPlaying(-1)">&#x276E;&#x276E;</button>
   <div class="now-playing-container" id="nowPlaying">
     <div th:each="movie : ${movies}" class="movie-card">
+      <a th:href="@{/filminfo(title=${movie.judulFilm})}">
       <img th:src="${movie.posterFilm}" alt="Now Playing 1" />
       <div class="movie-title" th:text="${movie.judulFilm}"></div>
+      </a>
     </div>
   </div>
   <button class="arrow arrow-right" onclick="scrollNowPlaying(1)">&#x276F;&#x276F;</button>
