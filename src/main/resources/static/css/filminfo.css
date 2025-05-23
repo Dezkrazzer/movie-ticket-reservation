@@ -153,7 +153,7 @@ body {
 
     .container {
         flex-direction: column;
-        width: 90%;
+        width: 80%;
         max-width: 400px;
         box-shadow:
             0 -10px 15px rgba(0, 0, 0, 0.3),
