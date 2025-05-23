@@ -166,14 +166,14 @@ body {
 
     .poster {
         width: 100%;
-        max-height: 300px;
-        overflow: hidden;
+        height: auto;
+        background-color: #000;
     }
 
     .poster img {
         width: 100%;
         height: auto;
-        object-fit: cover;
+        object-fit: contain;
         display: block;
     }
 
