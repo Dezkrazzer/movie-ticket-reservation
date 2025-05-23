@@ -26,6 +26,7 @@
     <link rel="stylesheet" th:href="@{/css/index/top-section.css}" />
     <link rel="stylesheet" th:href="@{/css/index/category-movie.css}" />
     <link rel="stylesheet" th:href="@{/css/index/now-playing-movie.css}" />
+    <link rel="stylesheet" th:href="@{/css/index/rules-section.css}" />
     <link rel="stylesheet" th:href="@{/css/index/coming-soon-movie.css}" /> 
   </head>
 
@@ -70,6 +71,10 @@
 
     <div
       th:replace="~{fragments/index/coming-soon-section :: coming-soon-section}" 
+    ></div>
+
+    <div
+      th:replace="~{fragments/index/rules-section :: rules-section}" 
     ></div>
 
     <div th:replace="~{fragments/footer :: footer}"></div> 

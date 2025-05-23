@@ -1,0 +1,90 @@
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #ffd700;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.2em;
+        margin-top: 20px;
+        color: #ffd700;
+    }
+
+    header p {
+        font-size: 1em;
+        margin-bottom: -10px;
+        color: #ddd;
+    }
+
+    .rules-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+        border-radius: 15px;
+    }
+
+    .rule {
+        background-color: #333;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .rule:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .rule img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .rule p {
+        font-size: 0.85em;
+        color: white;
+        margin: 0;
+    }
+
+    @media (max-width: 500px) {
+        .rules-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 25px 20px;
+        }
+
+        .rule {
+            padding: 12px 10px;
+        }
+
+        .rule img {
+            width: 26px;
+            height: 26px;
+        }
+
+        .rule p {
+            font-size: 0.55em;
+        }
+
+        header h1 {
+            margin-top: 10px;
+            font-size: 1.4em;
+        }
+
+        header p {
+            font-size: 0.8em;
+            margin-bottom: -35px;
+        }
+    }
