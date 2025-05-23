@@ -148,12 +148,12 @@ body {
 @media (max-width: 768px) {
     body {
         justify-content: flex-start;
-        padding-top: 40px;
+        padding-top: 20px;
     }
 
     .container {
         flex-direction: column;
-        width: 80%;
+        width: 90%;
         max-width: 400px;
         box-shadow:
             0 -10px 15px rgba(0, 0, 0, 0.3),
@@ -166,50 +166,51 @@ body {
 
     .poster {
         width: 100%;
-        height: auto;
-        max-height: 250px;
+        max-height: 300px;
+        overflow: hidden;
     }
 
     .poster img {
         width: 100%;
         height: auto;
         object-fit: cover;
-        border-bottom: 2px solid #333;
+        display: block;
     }
 
     .info {
-        padding: 14px;
+        padding: 16px;
     }
 
     .info h2 {
-        margin-top: 55px;
-        font-size: 18px;
+        margin-top: 0;
+        font-size: 20px;
     }
 
     .tag {
-        font-size: 11px;
-        padding: 3px 8px;
+        font-size: 12px;
+        padding: 4px 8px;
     }
 
     .info p {
-        font-size: 12px;
-    }
-
-    .stars {
         font-size: 13px;
     }
 
-    .reviews h3 {
+    .stars {
         font-size: 14px;
     }
 
+    .reviews h3 {
+        font-size: 15px;
+    }
+
     .review {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .back-button {
         font-size: 14px;
-        padding: 9px 16px;
+        padding: 10px 16px;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 }
