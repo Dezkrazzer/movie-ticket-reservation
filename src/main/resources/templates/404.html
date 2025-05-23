@@ -4,14 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>CinemaGO - Page not Found</title>
+    <title>CinemaGO - Page Not Found</title>
     <link rel="icon" th:href="@{/assets/cgoLOGO.png}" type="image/png" />
+
+    <meta property="og:title" content="CinemaGO" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cgo.lzuardiai.my.id" />
+    <meta property="og:image" content="https://cgo.lzuardiai.my.id/assets/cgoLOGO.png" />
+    <meta property="og:description" content="CinemaGO is an application for ordering cinema tickets with various features. This application is made using the Java programming language. And the program has met Object Oriented Programming." />
+    <meta name="theme-color" content="#c2a900">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" th:href="@{/css/404.css}" />
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <div class="code">
         <span>4</span>
         <span class="emoji">😵</span>
@@ -22,4 +31,12 @@
       <a href="/" class="btn">Back To Home</a>
     </div>
   </body>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,  // durasi animasi
+      once: true      // hanya animasi 1x saat masuk viewport
+    });
+  </script>
 </html>

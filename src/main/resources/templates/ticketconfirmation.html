@@ -10,19 +10,27 @@
     <meta property="og:title" content="CinemaGO" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cgo.lzuardiai.my.id" />
-    <meta property="og:image" content="https://cgo.lzuardiai.my.id/assets/cgoLOGO.png" />
-    <meta property="og:description" content="CinemaGO is an application for ordering cinema tickets with various features. This application is made using the Java programming language. And the program has met Object Oriented Programming." />
-    <meta name="theme-color" content="#c2a900">
+    <meta
+      property="og:image"
+      content="https://cgo.lzuardiai.my.id/assets/cgoLOGO.png"
+    />
+    <meta
+      property="og:description"
+      content="CinemaGO is an application for ordering cinema tickets with various features. This application is made using the Java programming language. And the program has met Object Oriented Programming."
+    />
+    <meta name="theme-color" content="#c2a900" />
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" th:href="@{/css/ticketconfirmation.css}" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <h2>🎫 Yeayy! Tiketmu sudah jadi nih!</h2>
       <div class="ticket-card">
         <!-- Bagian atas: Gambar dan info film -->
@@ -101,4 +109,12 @@
       </div>
     </div>
   </body>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900, // durasi animasi
+      once: true, // hanya animasi 1x saat masuk viewport
+    });
+  </script>
 </html>

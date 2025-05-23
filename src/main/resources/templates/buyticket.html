@@ -14,10 +14,12 @@
     <meta property="og:description" content="CinemaGO is an application for ordering cinema tickets with various features. This application is made using the Java programming language. And the program has met Object Oriented Programming." />
     <meta name="theme-color" content="#c2a900">
 
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" th:href="@{/css/buyticket.css}" />
 </head>
 <body>
-    <div class="container-ticket">
+    <div class="container-ticket" data-aos="fade-up">
     <h1>Detail Film</h1>
 
     <form th:action="@{/buyticket}" method="post" id="buyTicketForm">
@@ -73,6 +75,14 @@
     </form>
   </div>
 </body>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,  // durasi animasi
+      once: true      // hanya animasi 1x saat masuk viewport
+    });
+  </script>
 
 <script>
   const seatMap = document.querySelector(".seat-map");
